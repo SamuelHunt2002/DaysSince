@@ -1,1 +1,1 @@
-# thechattyshow.github.io
+# Manifesto.github.io
