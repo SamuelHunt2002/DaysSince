@@ -1,1 +1,0 @@
-# Manifesto.github.io
