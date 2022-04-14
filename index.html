@@ -26,6 +26,7 @@ function countUpFromTime(countFrom, id) {
   idEl.getElementsByClassName('hours')[0].innerHTML = hours;
   idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
   idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+  document.getElementById('desc').content = `${days} days, ${hours} hours, ${mins} minutes, and ${secs} seconds.`;
 
   clearTimeout(countUpFromTime.interval);
   countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
@@ -33,6 +34,10 @@ function countUpFromTime(countFrom, id) {
 </script>
 <meta> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="https://thechattyshow.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How long since an events team post was decanonised?">
+<meta id="desc" property="og:description" content="">
 </meta> 
 <body>
 <style>
