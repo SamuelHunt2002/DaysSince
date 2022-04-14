@@ -1,197 +1,62 @@
-<!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Manifesto for Party President</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body class="homepage">
-		<div id="page-wrapper">
+<script>
+    /*
+ * Basic Count Up from Date and Time
+ * Author: @mrwigster / https://guwii.com/bytes/count-date-time-javascript/
+ */
+window.onload = function() {
+  // Month Day, Year Hour:Minute:Second, id-of-element-container
+  countUpFromTime("Apr 13, 2022 21:22:00", 'countup1'); // ****** Change this line!
+};
+function countUpFromTime(countFrom, id) {
+  countFrom = new Date(countFrom).getTime();
+  var now = new Date(),
+      countFrom = new Date(countFrom),
+      timeDifference = (now - countFrom);
+    
+  var secondsInADay = 60 * 60 * 1000 * 24,
+      secondsInAHour = 60 * 60 * 1000;
+    
+  days = Math.floor(timeDifference / (secondsInADay) * 1);
+  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
+  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
+  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
 
-			<!-- Header -->
-				<div id="header">
+  var idEl = document.getElementById(id);
+  idEl.getElementsByClassName('days')[0].innerHTML = days;
+  idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+  idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+  idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">A manifesto of hope.</a></h1>
-								<hr />
-								<p>/u/thechattyshow's manifesto.</p>
-							</header>
-							<footer>
-								<a href="#banner" class="button circled scrolly">Start</a>
-							</footer>
-						</div>
+  clearTimeout(countUpFromTime.interval);
+  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+}
+</script>
+<body>
+<style>
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
 
-				
-				</div>
+    }
+    div {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        border: 3px solid green;
+        vertical-align: middle;
+    }
+</style>
+<h1> How long since an events team post was decanonised?
+</h1>
 
-			<!-- Banner -->
-				<section id="banner">
-					<header>
-						<h2>My pledges for the Party.</h2>	
-						<p>
-							If elected, I will not sit around, but bring big changes </strong> quick.
-						</p>
-					</header>
-				</section>
+<div class="countup" id="countup1">
+    <span class="timeel days">00</span>
+    <span class="timeel timeRefDays">days</span>
+    <span class="timeel hours">00</span>
+    <span class="timeel timeRefHours">hours</span>
+    <span class="timeel minutes">00</span>
+    <span class="timeel timeRefMinutes">minutes</span>
+    <span class="timeel seconds">00</span>
+    <span class="timeel timeRefSeconds">seconds</span>
+  </div>
 
-			<!-- Carousel -->
-				<section class="carousel">
-					<div class="reel">
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.png" alt="" /></a>
-							<header>
-								<h3><a href="#">Creating transparrency within the Exec.</a></h3>
-							</header>
-							<p>I will make sure that our exec becomes more transparrent, with fortnightly Q and A's similiar to MQ's. </p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">A buddy system.</a></h3>
-							</header>
-							<p>I will introduce a Buddy System to the Party, so newer people can be more welcomed.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Better relations for other parties.</a></h3>
-							</header>
-							<p>I reguarly talk to members of the Government, OO and UO. Because of this, I can improve our relations with other parties.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Reforming Conference.</a></h3>
-							</header>
-							<p>With me as PP, I will make conference more inclusive, as well as fun. This will be through speeches, awards and other activities made to engage everyone.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Fortnightly polls.</a></h3>
-							</header>
-							<p>On the weeks that aren't having a Q and A, I will introduce polls ranging from views on our direction, political views and more trivial things.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic069.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Press Outlet.</a></h3>
-							</header>
-							<p>I have had extensive experience in MBBC, and if elected I plan on introducing a Party Press Release similiar to the old Vanguard Press Release. This will make us look stronger to the outside world.</p>
-						</article>
-
-						
-					</div>
-				</section>
-
-			<!-- Main -->
-				<div class="wrapper style2">
-
-					<article id="main" class="container special">
-						<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-						<header>
-							<h2><a href="#">My Story.</a></h2>
-							<p>
-								Ever since being elected as a National MP, I have always fought for the Party.
-							</p>
-						</header>
-						<p>
-							When elected a National MP, in the early days of /u/Bznss's time as Leader, I didn't know what to expect. However as time went on I understood what it meant to be a Liberal Democrat. It means to always see the best in people and situations. To be committed to freedom and equality. With me as Party President, I will keep fighting for these values.  
-						</p>
-						<footer>
-							<a href="#" class="button">Continue Reading</a>
-						</footer>
-					</article>
-
-				</div>
-
-			<!-- Features -->
-				<div class="wrapper style1">
-
-					<section id="features" class="container special">
-						<header>
-							<h2>Endorsements.</h2>
-							<p>It's not just me who knows it's #TimeForChatty, here are some others.</p>
-						</header>
-						<div class="row">
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">JellyTom - Ex Leader of the Lib Dems.</a></h3>
-								</header>
-								<p>
-									(Endorsement to come after he finishes streaming)		
-								</p>
-							</article>
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Valttuuuuuuuuu - Shadow Health Secretary.</a></h3>
-								</header>
-								<p>
-									Chattyshow has stood out as the outstanding success of the Government to me. While other ministers have failed to perform even the most simple tasks, Chatty has always acted in a sensible and professial manner. And that is what a person in any leadership role should be like.
-								</p>
-							</article>
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">IndigoRolo - SoS For Northern Ireland.</a></h3>
-								</header>
-								<p>
-                                                                    I would like to endorse /u/thechattyshow. He is the candidate I feel has the energy, kindness, and honesty we need from a party president.
-								</p>
-							</article>
-						</div>
-					</section>
-
-			
-
-						</div>
-						<hr />
-						<div class="row">
-							<div class="12u">
-
-								
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; /u/thechattyshow. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.onvisible.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+</body>
